@@ -1,9 +1,14 @@
+import Banner from "../components/Header/Banner";
+import AboutUs from "./AboutUs";
+
+
 
 
 const HomePage = () => {
     return (
         <div>
-           <h2>This is home</h2> 
+            <Banner />
+            <AboutUs />
         </div>
     );
 };
