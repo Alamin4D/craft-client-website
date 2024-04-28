@@ -5,7 +5,6 @@ const CraftDetails = () => {
     const loadedCrafts = useLoaderData();
     return (
         <div>
-            {/* <h2>craft</h2> */}
             <div className="grid my-8 gap-8 md:grid-cols-4 px-4">
                 <div className="flex justify-center items-center md:col-span-2 py-6 bg-[#F3F3F3] rounded-2xl">
                     <img data-aos="zoom-in" data-aos-duration="1000" className="md:w-full md:h-full" src={loadedCrafts.image} alt="" />
