@@ -30,9 +30,9 @@ const LoginPage = () => {
               toast.success('User Created Sucessfully')
             }
           })
-        // .catch(error => {
-        //     console.log(error);
-        // })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     return (
