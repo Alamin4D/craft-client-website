@@ -7,6 +7,9 @@ import AddCraft from "../pages/AddCraft";
 import MyArt from "../pages/MyArt";
 import AboutUs from "../pages/AboutUs";
 import LoginPage from "../pages/LoginPage";
+import CraftDetails from "../components/Cards/CraftDetails";
+import Register from "../pages/RegisterPage";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 const Route = createBrowserRouter([
     {
@@ -16,27 +19,38 @@ const Route = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <HomePage />
+                element: <HomePage />,
+                loader: () => fetch('http://localhost:5000/craft'),
             },
             {
                 path: "/craftItems",
-                element: <CraftItems />
+                element: <CraftItems />,
+                loader: () => fetch('http://localhost:5000/craft'),
+            },
+            {
+                path: "/craftDetails/:id",
+                element: <CraftDetails />,
+                loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`),
             },
             {
                 path: "/addCraft",
-                element: <AddCraft />
+                element: <ProtectedRoute><AddCraft /></ProtectedRoute>
             },
             {
                 path: "/myArt",
-                element: <MyArt />
+                element: <ProtectedRoute><MyArt /></ProtectedRoute>
             },
             {
                 path: "/aboutUs",
-                element: <AboutUs />
+                element: <ProtectedRoute><AboutUs /></ProtectedRoute>
             },
             {
                 path: "/loginPage",
                 element: <LoginPage />
+            },
+            {
+                path: "/registerPage",
+                element: <Register />
             }
         ]
     }

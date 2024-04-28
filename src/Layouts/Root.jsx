@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Header/Navbar";
 import Footer from "../components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 
 const Root = () => {
@@ -15,6 +16,7 @@ const Root = () => {
             <div className="w-full px-4">
                 <Footer />
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
