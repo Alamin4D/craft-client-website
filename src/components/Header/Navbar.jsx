@@ -30,9 +30,9 @@ const Navbar = () => {
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 space-y-4 shadow bg-base-100 rounded-box w-52">
                         <NavLink to="/"><a>Home</a></NavLink>
-                        <NavLink to="/craftItems"><a>Craft Items</a></NavLink>
+                        <NavLink to="/craftItems"><a>All Art & craft Items</a></NavLink>
                         <NavLink to="/addCraft"><a>Add Craft</a></NavLink>
-                        <NavLink to="/myArt"><a>My Art</a></NavLink>
+                        <NavLink to="/myArt"><a>My Art&Craft List</a></NavLink>
                         <NavLink to="/aboutUs"><a>About Us</a></NavLink>
                     </ul>
                 </div>
@@ -41,9 +41,9 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-base font-medium gap-6">
                     <NavLink to="/" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>Home</NavLink>
-                    <NavLink to="/craftItems" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>Craft Items</NavLink>
+                    <NavLink to="/craftItems" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>All Art & craft Items</NavLink>
                     <NavLink to="/addCraft" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>Add Craft</NavLink>
-                    <NavLink to="/myArt" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>My Art</NavLink>
+                    <NavLink to="/myArt" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>My Art&Craft List</NavLink>
                     <NavLink to="/aboutUs" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>About Us</NavLink>
                 </ul>
             </div>
