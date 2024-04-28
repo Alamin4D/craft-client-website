@@ -5,6 +5,7 @@ const CraftCard = ({ craft }) => {
     const { _id, image, name, short_Description } = craft;
     return (
         <div>
+            <h2>Craft</h2>
             <div className="card bg-base-100 shadow-xl space-y-4">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body space-y-3">
