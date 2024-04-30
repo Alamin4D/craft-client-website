@@ -22,17 +22,17 @@ const Route = createBrowserRouter([
             {
                 path: "/",
                 element: <HomePage />,
-                loader: () => fetch('http://localhost:5000/craft'),
+                loader: () => fetch('https://craft-store-server-ten.vercel.app/craft'),
             },
             {
                 path: "/craftItems",
                 element: <CraftItems />,
-                loader: () => fetch('http://localhost:5000/craft'),
+                loader: () => fetch('https://craft-store-server-ten.vercel.app/craft'),
             },
             {
                 path: "/viewDetails/:id",
                 element: <ProtectedRoute><ViewDetails /></ProtectedRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`),
+                loader: ({params}) => fetch(`https://craft-store-server-ten.vercel.app/craft/${params.id}`),
             },
             {
                 path: "/addCraft",
@@ -41,12 +41,12 @@ const Route = createBrowserRouter([
             {
                 path: "/updatePage/:id",
                 element: <UpdatePage />,
-                loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+                loader: ({params}) => fetch(`https://craft-store-server-ten.vercel.app/craft/${params.id}`)
             },
             {
                 path: "/myArt",
                 element: <ProtectedRoute><MyArt /></ProtectedRoute>,
-                loader: () => fetch('http://localhost:5000/craft'),
+                loader: () => fetch('https://craft-store-server-ten.vercel.app/craft'),
             },
             {
                 path: "/aboutUs",

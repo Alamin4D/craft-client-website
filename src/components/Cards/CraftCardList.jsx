@@ -20,7 +20,7 @@ const CraftCardList = ({ craftList, crafts, setCrafts }) => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/craft/${_id}`, {
+                fetch(`https://craft-store-server-ten.vercel.app/craft/${_id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

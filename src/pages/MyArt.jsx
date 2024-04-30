@@ -6,15 +6,16 @@ import { useState } from "react";
 const MyArt = () => {
     const LoadedCrafts = useLoaderData();
     const [crafts, setCrafts] = useState(LoadedCrafts);
-    const [displayCrafts, setDisplayCrafts] = useState([]);
-
 
     const handleCraftsFilter = filter => {
-        if(filter === 'Yes'){
-            setDisplayCrafts(displayCrafts)
+        if (filter === 'Yes') {
+            console.log('hi')
+            const remoteCrafts = LoadedCrafts.filter(craft => craft.customization === 'Yes');
+            setCrafts(remoteCrafts);
         }
-        else if(filter === 'No'){
-            setDisplayCrafts(displayCrafts)
+        else if (filter === 'No') {
+            const noCrafts = LoadedCrafts.filter(craft => craft.customization === 'No');
+            setCrafts(noCrafts);
         }
     }
     return (

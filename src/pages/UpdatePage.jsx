@@ -26,7 +26,7 @@ const UpdatePage = () => {
         const updatedCraft = { item_Name, userName, email, subcategory_Name, short_Description, price, customization, processing_time, stockStatus, rating, image }
         console.log(updatedCraft);
 
-        fetch(`http://localhost:5000/craft/${_id}`, {
+        fetch(`https://craft-store-server-ten.vercel.app/craft/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

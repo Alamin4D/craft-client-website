@@ -117,7 +117,7 @@ const Contract = () => {
                         <label className="block mb-2 dark:text-white" htmlFor="image">
                             Message
                         </label>
-                        <textarea className="textarea textarea-bordered w-full p-2 border rounded-md focus:outline-yellow-700" placeholder="Bio"></textarea>
+                        <textarea className="textarea textarea-bordered w-full p-2 border rounded-md focus:outline-yellow-700" placeholder="Message"></textarea>
                         <input
                             className="px-4 flex text-center mx-auto justify-center items-center py-2 mt-4 rounded hover:bg-yellow-700  bg-yellow-700 duration-200 text-white cursor-pointer font-semibold"
                             type="submit"

@@ -22,7 +22,7 @@ const AddCraft = () => {
         const newCraft = { item_Name, userName, email, subcategory_Name, short_Description, price, customization, processing_time, stockStatus, rating, image }
         console.log(newCraft);
         // send data to the server
-        fetch('http://localhost:5000/craft', {
+        fetch('https://craft-store-server-ten.vercel.app/craft', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -1,3 +1,4 @@
+import { Fade, Slide } from "react-awesome-reveal";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -10,14 +11,30 @@ const ViewDetails = () => {
                     <img data-aos="zoom-in" data-aos-duration="1000" className="md:w-full md:h-full" src={loadedCrafts.image} alt="" />
                 </div>
                 <div className="md:col-span-2 space-y-2">
-                    <h1 data-aos="fade-left" data-aos-delay="1000" className="text-4xl font-bold">{loadedCrafts.item_Name}</h1>
-                    <p data-aos="fade-left" data-aos-delay="1500" className="mt-2 mb-2 text-base">{loadedCrafts.subcategory_Name}</p>
-                    <p data-aos="fade-left" data-aos-delay="2000"><span className="text-base">description:</span>{loadedCrafts.short_Description}</p>
-                    <p data-aos="fade-left" data-aos-delay="2600">price: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.price}</p>
-                    <p data-aos="fade-left" data-aos-delay="2800">customization: <span className="text-base font-semibold ml-20"></span>{loadedCrafts.customization}</p>
-                    <p data-aos="fade-left" data-aos-delay="3000">processing_time: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.processing_time}</p>
-                    <p data-aos="fade-left" data-aos-delay="3000">stockStatus: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.stockStatus}</p>
-                    <p data-aos="fade-left" data-aos-delay="3000">rating: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.rating}</p>
+                    <Fade>
+                        <h1 className="text-4xl font-bold">{loadedCrafts.item_Name}</h1>
+                    </Fade>
+                    <Slide>
+                        <p className="mt-2 mb-2 text-base">{loadedCrafts.subcategory_Name}</p>
+                    </Slide>
+                    <Slide>
+                        <p><span className="text-base">description:</span>{loadedCrafts.short_Description}</p>
+                    </Slide>
+                    <Slide>
+                        <p>price: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.price}</p>
+                    </Slide>
+                    <Slide>
+                        <p>customization: <span className="text-base font-semibold ml-20"></span>{loadedCrafts.customization}</p>
+                    </Slide>
+                    <Slide>
+                        <p>processing_time: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.processing_time}</p>
+                    </Slide>
+                    <Slide>
+                        <p>stockStatus: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.stockStatus}</p>
+                    </Slide>
+                    <Slide>
+                        <p>rating: <span className="text-base font-semibold ml-6"></span>{loadedCrafts.rating}</p>
+                    </Slide>
                 </div>
             </div>
         </div>
