@@ -67,9 +67,6 @@ const Contract = () => {
                                 <i className="bx bxs-alarm-add"></i>
                             </span>
                             <span className="dark:text-white">
-                                {/* <span className="text-[#FF497C]">
-                                {update ? "Update " : "Add "}
-                            </span> */}
                                 Get In Touch
                             </span>
                         </p>
