@@ -3,6 +3,7 @@
 const Footer = () => {
     return (
         <div className="bg-[#030712] text-white">
+            {/* footer section */}
             <footer className="footer lg:px-24 px-8 py-5 my-16">
                 <nav>
                     <h6 className="footer-title">Quick Links</h6>
