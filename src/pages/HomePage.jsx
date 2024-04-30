@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../components/Header/Banner";
 import AboutUs from "./AboutUs";
 import CraftCard from "../components/Cards/CraftCard";
+import Faq from "../components/Header/Faq";
 
 
 
@@ -23,6 +24,7 @@ const HomePage = () => {
                     ></CraftCard>)
                 }
             </div>
+            <Faq />
         </div>
     );
 };

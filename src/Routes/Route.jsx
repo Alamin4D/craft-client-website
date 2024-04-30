@@ -7,9 +7,11 @@ import AddCraft from "../pages/AddCraft";
 import MyArt from "../pages/MyArt";
 import AboutUs from "../pages/AboutUs";
 import LoginPage from "../pages/LoginPage";
-import CraftDetails from "../components/Cards/CraftDetails";
 import Register from "../pages/RegisterPage";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import ViewDetails from "../components/Cards/ViewDetails";
+import Contract from "../pages/Contract";
+import UpdatePage from "../pages/UpdatePage";
 
 const Route = createBrowserRouter([
     {
@@ -28,8 +30,8 @@ const Route = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/craft'),
             },
             {
-                path: "/craftDetails/:id",
-                element: <CraftDetails />,
+                path: "/viewDetails/:id",
+                element: <ProtectedRoute><ViewDetails /></ProtectedRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`),
             },
             {
@@ -37,12 +39,22 @@ const Route = createBrowserRouter([
                 element: <ProtectedRoute><AddCraft /></ProtectedRoute>
             },
             {
+                path: "/updatePage/:id",
+                element: <UpdatePage />,
+                loader: ({params}) => fetch(`http://localhost:5000/craft/${params.id}`)
+            },
+            {
                 path: "/myArt",
-                element: <ProtectedRoute><MyArt /></ProtectedRoute>
+                element: <ProtectedRoute><MyArt /></ProtectedRoute>,
+                loader: () => fetch('http://localhost:5000/craft'),
             },
             {
                 path: "/aboutUs",
                 element: <ProtectedRoute><AboutUs /></ProtectedRoute>
+            },
+            {
+                path: "/contract",
+                element: <ProtectedRoute><Contract /></ProtectedRoute>
             },
             {
                 path: "/loginPage",

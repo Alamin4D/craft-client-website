@@ -1,10 +1,13 @@
 import Swal from 'sweetalert2'
+import UseAuth from '../hooks/UseAuth';
 
 const AddCraft = () => {
+    const { user } = UseAuth();
+    console.log(user)
     const handleAddToCraft = e => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
+        const item_Name = form.item_Name.value;
         const subcategory_Name = form.subcategory_Name.value;
         const short_Description = form.short_Description.value;
         const price = form.price.value;
@@ -13,9 +16,11 @@ const AddCraft = () => {
         const stockStatus = form.stockStatus.value;
         const rating = form.rating.value;
         const image = form.image.value;
-        const newCraft = { name, subcategory_Name, short_Description, price, customization, processing_time, stockStatus, rating, image }
+        const email = user?.email;
+        const userName = user?.displayName;
+        console.log(user)
+        const newCraft = { item_Name, userName, email, subcategory_Name, short_Description, price, customization, processing_time, stockStatus, rating, image }
         console.log(newCraft);
-
         // send data to the server
         fetch('http://localhost:5000/craft', {
             method: 'POST',
@@ -30,7 +35,7 @@ const AddCraft = () => {
                 if(data.insertedId){
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Added Successfully',
+                        text: 'Craft Added Successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                       })
@@ -65,8 +70,8 @@ const AddCraft = () => {
                                 className="w-full p-2 border rounded-md focus:outline-yellow-700"
                                 type="text"
                                 placeholder="Enter Name"
-                                id="name"
-                                name="name"
+                                id="item_Name"
+                                name="item_Name"
                             />
 
                             <label

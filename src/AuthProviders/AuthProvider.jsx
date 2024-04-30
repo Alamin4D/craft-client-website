@@ -16,14 +16,6 @@ const AuthProvider = ({ children }) => {
     console.log(loading);
 
 
-    // // update user profile
-    // const updateUserProfile = (name, image) => {
-    //     return updateProfile(auth.currentUser, {
-    //         displayName: name, 
-    //         photoURL: image
-    //       })
-    // }
-
     // create user
     const createUser = (email, password) => {
         console.log('password')
@@ -75,7 +67,6 @@ const AuthProvider = ({ children }) => {
         githubLogin,
         logOut,
         user,
-        // updateUserProfile,
         loading
     }
 

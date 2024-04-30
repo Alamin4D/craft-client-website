@@ -34,9 +34,10 @@ const Navbar = () => {
                         <NavLink to="/addCraft"><a>Add Craft</a></NavLink>
                         <NavLink to="/myArt"><a>My Art&Craft List</a></NavLink>
                         <NavLink to="/aboutUs"><a>About Us</a></NavLink>
+                        <NavLink to="/contract"><a>About Us</a></NavLink>
                     </ul>
                 </div>
-                <img className="lg:h-10 h-12" src={logo} alt="" />
+                <img className="lg:h-10 h-8" src={logo} alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-base font-medium gap-6">
@@ -45,6 +46,7 @@ const Navbar = () => {
                     <NavLink to="/addCraft" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>Add Craft</NavLink>
                     <NavLink to="/myArt" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>My Art&Craft List</NavLink>
                     <NavLink to="/aboutUs" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>About Us</NavLink>
+                    <NavLink to="/contract" className={({ isActive }) => isActive ? "text-yellow-700 border-b-4 border-yellow-700" : "hover:text-yellow-700"}>Contract</NavLink>
                 </ul>
             </div>
             <div className="navbar-end gap-4">
@@ -54,23 +56,19 @@ const Navbar = () => {
                     <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </label>
                 {
-                    user?.email ? <div className="dropdown dropdown-end">
+                    user?.email ? <> <div title={user?.displayName} className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img alt="Tailwind CSS Navbar component" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
                             </div>
                         </div>
-                        <ul tabIndex={0} className="mt-3 z-[100] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <button className="btn btn-sm btn-ghost">{user?.displayName || 'user name not found'}</button>
-                            </li>
-                            <li>
-                                <button
-                                    onClick={logOut}
-                                    className="btn btn-sm btn-ghost">Logout</button>
-                            </li>
-                        </ul>
+                        {/* <ul tabIndex={0} className="mt-3 z-[100] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                        </ul> */}
                     </div>
+                        <button
+                            onClick={logOut}
+                            className="btn bg-yellow-700 text-white">Logout</button>
+                    </>
                         :
                         <Link to="/loginPage">
                             <button className="btn bg-yellow-700 text-white">Login</button>

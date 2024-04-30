@@ -27,7 +27,9 @@ const CraftItems = () => {
                 <td className="border">{craft.subcategory_Name}</td>
                 <td className="border">{craft.price}</td>
                 <td className="border">{craft.customization}</td>
+                <Link to={`/viewDetails/${craft._id}`}>
                   <button className="justify-center items-center text-blue-500 p-5 border-t">View Details</button>
+                </Link>
               </tr>)
             }
           </tbody>
