@@ -7,7 +7,6 @@ const ProtectedRoute = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        // <h2>protect</h2>
         return <span className="loading loading-spinner loading-lg text-center justify-center items-center mx-auto flex"></span>
     }
 
